@@ -535,6 +535,30 @@ input.error {
 #calc {
   background-color: #466a78;
 }
+.service-slider {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.service-inner {
+  position: relative;
+  width: 200%;
+  display: flex;
+  left: 10px;
+}
+.service-slider__item {
+  width: calc(200% / 4);
+}
+@media (max-width: 1200px) {
+  .service-slider__item {
+    width: 100%;
+  }
+  .service-inner {
+    position: relative;
+    width: 400%;
+    display: flex;
+  }
+}
+
 .service-block {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -553,6 +577,9 @@ input.error {
 .service-button {
   position: absolute;
   bottom: 20px;
+}
+.service-button > a {
+  pointer-events: none;
 }
 .service-text {
   background-color: #f5f6f7;
@@ -1590,15 +1617,22 @@ input.error {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
-.benefits-wrap {
-  display: flex;
-  justify-content: space-between;
+.benefits-inner {
+  max-width: calc(195px * 3);
   margin: 0 auto;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.benefits-wrap {
+  position: relative;
+  display: flex;
+  width: calc(195px * 6);
 }
 
 .benefits__item {
-  width: 100%;
-  max-width: 185px;
+  min-width: 195px;
+  padding: 0 10px;
 }
 
 .benefits-arrows {
@@ -1617,6 +1651,7 @@ input.error {
 
 .benefits__arrow > img {
   width: 100%;
+  pointer-events: none;
 }
 
 .services-arrows {
@@ -1635,6 +1670,7 @@ input.error {
 
 .services__arrow > img {
   width: 100%;
+  pointer-events: none;
 }
 
 .countdown {
@@ -1665,16 +1701,11 @@ input.error {
   transform: rotate(90deg);
 }
 
-@media (min-width: 576px) {
-  .benefits-wrap {
-    width: 100%;
-    max-width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-  .benefits-wrap {
-    width: 100%;
-    max-width: 576px;
+@media (max-width: 576px) {
+  .benefits-inner {
+    max-width: 195px;
+    margin: 0 auto;
+    overflow: hidden;
+    scroll-behavior: smooth;
   }
 }
