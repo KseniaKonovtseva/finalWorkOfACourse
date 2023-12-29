@@ -1709,3 +1709,8 @@ input.error {
     scroll-behavior: smooth;
   }
 }
+.form-status {
+  padding-top: 10px;
+  font-size: 14px;
+  color: #ff8a17;
+}
