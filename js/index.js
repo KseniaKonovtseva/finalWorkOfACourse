@@ -14,9 +14,33 @@ sliderServices()
 modalCall()
 timer('1 January 2024', '#order_1')
 timer('1 January 2024', '#order_2')
-forms('#order_1 form')
-forms('#order_2 form')
-forms('.services-modal form')
+forms({
+  formId: '#order_1 form',
+  someElem: [
+    {
+      type: 'input',
+      id: 'calc-total'
+    }
+  ]
+})
+forms({
+  formId: '#order_2 form',
+  someElem: [
+    {
+      type: 'input',
+      id: 'calc-total'
+    }
+  ]
+})
+forms({
+  formId: '.services-modal form',
+  someElem: [
+    {
+      type: 'input',
+      id: 'calc-total'
+    }
+  ]
+})
 popup()
 scroll()
 calc()

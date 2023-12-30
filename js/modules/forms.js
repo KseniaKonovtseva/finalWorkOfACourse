@@ -1,4 +1,4 @@
-const forms = (formId) => {
+const forms = ({formId, someElem = []}) => {
   const form = document.querySelector(formId);
   const statusBlock = document.createElement('div')
   const loadText = 'Загрузка...'
@@ -52,6 +52,14 @@ const forms = (formId) => {
     formData.forEach((val, key) => {
       formBody[key] = val
     })
+
+    if (someElem) {
+      if (someElem.type === 'block') {
+        formBody[someElem.id] = element.textContent
+      } else if (someElem.type === 'input') {
+        formBody[someElem.id] = element.value
+      }
+    } else {return}
     
     if (validate()) {
       sendForm(formBody)
